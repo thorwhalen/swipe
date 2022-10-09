@@ -185,19 +185,19 @@ def highest_score_swipe(it, score_of=None, k=1, output=None):
     if output is None:
         output = lambda km: km
     elif isinstance(output, str):
-        if output == "top_tuples":
+        if output == 'top_tuples':
             output = lambda km: sorted(km, reverse=True)
-        elif output == "items":
+        elif output == 'items':
             output = lambda km: [x[1] for x in km]
-        elif output == "scores":
+        elif output == 'scores':
             output = lambda km: [x[0] for x in km]
-        elif output == "top_score_items":
+        elif output == 'top_score_items':
             output = lambda km: [
                 x[1] for x in sorted(km, key=lambda x: x[0], reverse=True)
             ]
 
     if not callable(output):
-        raise ValueError("Unrecognized output: ".format(output))
+        raise ValueError('Unrecognized output: '.format(output))
 
     km = KeepMaxK(k=k)
 
