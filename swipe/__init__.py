@@ -21,7 +21,7 @@ class KeepMaxK(list):
             heappush(self, item)
 
 
-class KeepMaxUnikK(object):
+class KeepMaxUnikK:
     def __init__(self, k):
         self.min_val_items = KeepMaxK(k)
         self.item_set = set()
@@ -64,7 +64,7 @@ class KeepMinK(list):
         return [(-item[0], item[1]) for item in self]
 
 
-class HighestScoreSwipe(object):
+class HighestScoreSwipe:
     def __init__(self, score_of, chk_size, chk_step=1):
         self.score_of = score_of
         self.chk_size = chk_size
@@ -197,7 +197,7 @@ def highest_score_swipe(it, score_of=None, k=1, output=None):
             ]
 
     if not callable(output):
-        raise ValueError('Unrecognized output: '.format(output))
+        raise ValueError(f'Unrecognized output: {output!r}')
 
     km = KeepMaxK(k=k)
 
